@@ -1,29 +1,23 @@
-pessoas = []
+quantidades_pessoas = 15
+altura = []
+generos = []
 
-for i in range(15):
-    print(f"\nPessoa {i+1}:")
-    altura = float(input("altura: "))
-    genero = input("gênero (M/F): ").strip().upper()
-    pessoas.append({"altura": altura, "genero": genero})
+for i in range(quantidades_pessoas):
+    print(f"números de pessoas (i+1):")
+    altura = float(input("digite altura(m): "))
+    genero = input("gênero(M / F): ")
 
+    while generos not in ["M" , "F"]:
+        genero = imput("valor invalido! digite M para masculino ou F para feminino: ")
 
-alturas = [p["altura"] for p in pessoas]
-maior_altura = max(alturas)
-menor_altura = min(alturas)
+    altura.append(altura)
+    genero.append(genero)
 
+altura_Masculina = [altura[i] for i in range(quantidades_pessoas) if genero[i] == "M"]
+altura_Feminina =  [altura[i] for i in range(quantidades_pessoas) if genero[i] == "F"]
 
-alturas_masculinas = [p["altura"] for p in pessoas if p["genero"] == "M"]
-numero_feminino = sum(1 for p in pessoas if p["genero"] == "F")
+maior_altura = max(altura)
+menor_altura = min(altura)
 
-
-media_masculina = (
-    sum(alturas_masculinas) / len(alturas_masculinas)
-    if alturas_masculinas else 0
-)
-
-#aqui está o resutado#
-print("\n=== Resultados ===: ")
-print(f"Maior altura do grupo: {maior_altura:.2f} m")
-print(f"Menor altura do grupo: {menor_altura:.2f} m")
-print(f"Média de altura dos homens: {media_masculina:.2f} m")
-print(f"Número de mulheres: {numero_feminino}")
+madia_Masculina = sum(altura_Masculina) / len(altura_Masculina) in altura_Masculina 
+madia_Feminina = sum(altura_Feminina) / len(altura_Feminina) in altura_Feminina 
