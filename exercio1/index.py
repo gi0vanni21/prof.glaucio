@@ -3,7 +3,7 @@ pessoas = []
 for i in range(15):
     print(f"\nPessoa {i+1}:")
     altura = float(input("altura: "))
-    genero = input("genero (M/F): ").strip().upper()
+    genero = input("gênero (M/F): ").strip().upper()
     pessoas.append({"altura": altura, "genero": genero})
 
 
